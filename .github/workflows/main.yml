@@ -4,6 +4,7 @@ jobs:
   say-hello:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v2
       - name: display
       - shell: bash
         run: |
