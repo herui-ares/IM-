@@ -10,3 +10,14 @@ jobs:
           node-version: '14'
       - run: npm install -g bats
       - run: bats -v
+      - run: sudo /etc/init.d/php7.4-fpm restart
+      - name: Deploy
+      - uses: actions/ssh-action@mmain
+        with:
+            host: 120.25.155.134
+            username: root
+            password: Aa123123
+            port: 22
+            script:
+                sudo /etc/init.d/php7.4-fpm restart
+      
